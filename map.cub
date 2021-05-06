@@ -1,9 +1,9 @@
 R 1048 1080
-NO  ./pics/redbrick.xpm
+NO  ./pics/bunkerwall.xpm
 SO ./pics/stonewall.xpm
-WE ./pics/redbrick.xpm
+WE ./pics/labwall.xpm
 EA ./pics/stonewall.xpm
-S ./pics/guard.xpm
+S ./pics/armor.xpm
 C 191,192,193
 F 61,62,63
 
@@ -12,7 +12,7 @@ F 61,62,63
 100000000000000001
 100101000010100001
 100000000000000001
-100S00002000111111  1111111111
+100E00002000111111  1111111111
 1000000000001       1000000001
 111000000020111111  1111000001
   110011000110000111   1000001
