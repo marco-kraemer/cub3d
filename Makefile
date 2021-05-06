@@ -43,7 +43,7 @@ OBJS = $(SRC:.c=.o)
 
 $(NAME): lib
 	@$(CC) $(FLAGS) -I/usr/include -Imlx_linux -O3 -c $(SRC)
-	@$(CC) $(FLAGS) $(OBJS) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz ./libft/libft.a -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJS) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./libft/libft.a -o $(NAME)
 
 lib:
 	@$(MAKE) -C libft
