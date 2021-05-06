@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:26:36 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:25:10 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/05 22:25:24 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	make_textures(t_data img, int color[4][64][64], float radius)
 	}
 	if (img.texX > 64 - 1)
 		img.texX = 64 - 1;
-	if (img.texX == 1)
+	if (img.texX == 2)
 		printf("oi\n");
 	choose_tex(img, aux.lineHeight, color);
 }
