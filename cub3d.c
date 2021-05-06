@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 09:47:45 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:36:27 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/06 10:55:35 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,12 @@ int	main(int argc, char *argv[])
 	img.map_width = 25;
 	get_file(&img, argv);
 	printf("Starting cub3D...\n");
-	img.height = get_res_height(img.file);
-	img.width = get_res_width(img.file);
+	img.height = get_res_height(img);
+	img.width = get_res_width(img);
 	if (img.height <= 0 || img.width <= 0)
-		exit (0);
+		close_map_error(&img, 3);
+	img.map = get_map(img, img.file);
+	map_array_2d(&img);
 	i = -1;
 	while (i++ < 4)
 		img.path_to_tex[i] = get_tex_path(img.file, i);
@@ -119,8 +121,6 @@ int	main(int argc, char *argv[])
 		img.sky_color[i] = get_sky_color(img.file, i);
 		img.floor_color[i] = get_floor_color(img.file, i);
 	}
-	img.map = get_map(img, img.file);
-	map_array_2d(&img);
 	init_player(&img);
 	start_cub(&img, argc, argv);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 09:29:55 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 15:17:14 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/06 10:52:02 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ int		check_argv(char *arg);
 int		get_floor_color(char *file, int count);
 int		get_sky_color(char *file, int count);
 int		get_color(t_data *data, int x, int y);
-int		get_res_width(char *file);
-int		get_res_height(char *file);
+int		get_res_width(t_data img);
+int		get_res_height(t_data img);
 int		check_move(t_data img);
 int		move_player(t_data *img);
 int		radius_size(t_data *img, float oldpa, int color[4][64][64]);

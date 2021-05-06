@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 11:46:03 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/03 23:05:42 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/06 10:53:21 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	close_map_error(t_data *img, int rule)
 		printf("Invalid character on the map\n");
 	if (rule == 2)
 		printf("Invalid map\n");
+	if (rule == 3)
+		printf("Missing Resolution\n");
 	free(img->map_2d);
 	free(img->map);
 	free(img->file);

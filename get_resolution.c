@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:34:04 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 13:57:49 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/06 10:55:00 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,25 @@ void	get_file(t_data *img, char *argv[])
 	close(fd);
 }
 
-int	get_res_width(char *file)
+int	get_res_width(t_data img)
 {
 	int		i;
 	int		j;
 	char	*width;
 
 	i = 0;
-	while (file[i] != 'R')
+	while (img.file[i] != 'R')
 		i++;
 	i++;
-	while (file[i] == ' ')
+	while (img.file[i] == ' ')
 		i++;
 	j = 0;
-	while (file[i + j] != ' ')
+	while (img.file[i + j] != ' ')
 		j++;
 	width = malloc(sizeof(char) * j);
 	j = 0;
-	while (file[i] != ' ')
-		width[j++] = file[i++];
+	while (img.file[i] != ' ')
+		width[j++] = img.file[i++];
 	i = ft_atoi(width);
 	free(width);
 	if (i > 1920)
@@ -66,28 +66,28 @@ int	get_res_width(char *file)
 	return (i);
 }
 
-int	get_res_height(char *file)
+int	get_res_height(t_data img)
 {
 	int		i;
 	int		j;
 	char	*height;
 
 	i = 0;
-	while (file[i] != 'R' && file[i] != '\0')
+	while (img.file[i] != 'R' && img.file[i] != '\0')
 		i++;
-	if (file[i] == '\0')
-		exit (0);
+	if (img.file[i] == '\0')
+		close_map_error(&img, 3);
 	i += 2;
-	while (file[i] != ' ')
+	while (img.file[i] != ' ')
 		i++;
 	i++;
 	j = 0;
-	while (file[i + j] == ' ')
+	while (img.file[i + j] == ' ')
 		j++;
 	height = malloc(sizeof(char) * (j - 0));
 	j = 0;
-	while (file[i] != ' ')
-		height[j++] = file[i++];
+	while (img.file[i] != ' ')
+		height[j++] = img.file[i++];
 	i = ft_atoi(height);
 	free(height);
 	if (i > 1080)

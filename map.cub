@@ -1,5 +1,5 @@
 R 1048 1080
-NO  ./pics/greystone.xpm
+NO ./pics/greystone.xpm
 SO ./pics/redbrick.xpm
 WE ./pics/purplestone.xpm
 EA ./pics/mossy.xpm
