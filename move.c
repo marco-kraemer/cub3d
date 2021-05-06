@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:37:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:37:10 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/06 11:10:30 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 
 int	check_move(t_data img)
 {
-	int	placeX;
-	int	placeY;
+	int		placeX;
+	int		placeY;
+	float	angle;
 
-	placeX = img.px / img.map_width;
-	placeY = img.py / img.map_height;
-	if (*(img.map_2d + placeX + placeY * get_width_minmap(img)) == '1'
-		|| *(img.map_2d + placeX + placeY * get_width_minmap(img)) == '2')
-		return (1);
+	angle = 0;
+	while (angle < 2 * PI)
+	{
+		placeX = (img.px + sin(angle) * 5) / img.map_width;
+		placeY = (img.py + cos(angle) * 5) / img.map_height;
+		if (*(img.map_2d + placeX + placeY * get_width_minmap(img)) == '1'
+			|| *(img.map_2d + placeX + placeY * get_width_minmap(img)) == '2')
+			return (1);
+		angle += 0.1;
+	}
 	return (0);
 }
 
