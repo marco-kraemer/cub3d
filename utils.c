@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:28:24 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 15:05:05 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/05 22:37:28 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,21 +81,4 @@ int	check_argv2(char *arg)
 		i++;
 	}
 	return (1);
-}
-
-int	key_release(int keycode, t_data *img)
-{
-	if (keycode == 119)
-		img->w = 0;
-	if (keycode == 97)
-		img->a = 0;
-	if (keycode == 115)
-		img->s = 0;
-	if (keycode == 100)
-		img->d = 0;
-	if (keycode == 65361)
-		img->right = 0;
-	if (keycode == 65363)
-		img->left = 0;
-	return (0);
 }

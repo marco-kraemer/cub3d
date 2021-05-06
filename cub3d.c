@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 09:47:45 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:17:40 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/05 22:36:27 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	start_cub(t_data *img, int argc, char *argv[])
 	{
 		img->win = mlx_new_window(img->mlx, img->width, img->height, "cub3D");
 		mlx_hook(img->win, 2, 1L << 0, key_press, img);
-		mlx_hook(img->win, 3, 1L<<1, key_release, img);
+		mlx_hook(img->win, 3, 1L << 1, key_release, img);
 		mlx_hook(img->win, 33, 1L << 17, close_win, img);
 		mlx_loop_hook(img->mlx, loop, img);
 	}

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:37:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 15:19:55 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/05 22:37:10 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,25 +94,6 @@ int	move_front_back(t_data *img, int move)
 		img->pdy = sin(img->pa) * move;
 	}
 	return (1);
-}
-
-int	key_press(int keycode, t_data *img)
-{
-	if (keycode == 119)
-		img->w = 1;
-	if (keycode == 97)
-		img->a = 1;
-	if (keycode == 115)
-		img->s = 1;
-	if (keycode == 100)
-		img->d = 1;
-	if (keycode == 65361)
-		img->right = 1;
-	if (keycode == 65363)
-		img->left = 1;
-	if (keycode == 65307)
-		img->esc = 1;
-	return (0);
 }
 
 int	move_player(t_data *img)

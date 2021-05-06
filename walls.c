@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:26:36 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:25:24 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/05/05 22:35:59 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	make_textures(t_data img, int color[4][64][64], float radius)
 	while (aux.wallX > img.map_height)
 		aux.wallX -= img.map_height;
 	img.step = (float) img.map_height / 64;
-	aux.oldstep = 1;
+	aux.oldstep = 0;
 	while (img.step * aux.oldstep <= aux.wallX)
 		aux.oldstep++;
 	aux.increaseX = 0;
@@ -99,10 +99,9 @@ void	make_textures(t_data img, int color[4][64][64], float radius)
 		img.texX++;
 		aux.increaseX += img.step;
 	}
-	if (img.texX > 64 - 1)
-		img.texX = 64 - 1;
-	if (img.texX == 2)
-		printf("oi\n");
+	if (img.texX >= 64)
+		img.texX = 63;
+	img.texX -= 2;
 	choose_tex(img, aux.lineHeight, color);
 }
 

@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 09:44:11 by maraurel          #+#    #+#              #
-#    Updated: 2021/05/04 15:10:13 by maraurel         ###   ########.fr        #
+#    Updated: 2021/05/05 22:38:13 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = cub3d.c \
 	get_color.c \
 	get_resolution.c \
 	init.c \
+	keys.c \
 	map.c \
 	map2.c \
 	move.c \
