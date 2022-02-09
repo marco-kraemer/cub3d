@@ -6,11 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:46:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/04/30 14:26:12 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:41 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../include/cub3d.h"
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

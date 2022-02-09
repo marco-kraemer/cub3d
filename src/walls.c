@@ -6,11 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:26:36 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 22:35:59 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:41 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../include/cub3d.h"
 
 void	draw_walls(t_data img, float lineHeight, int color[64][64]
 	, float first_pixel)

@@ -6,11 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 14:32:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/05 14:26:02 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:41 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../include/cub3d.h"
 
 void	find_sprites_visible(t_data *img, int numSprites
 		, float sprites[get_width_minmap(*img)*get_height_minmap(*img)][3])

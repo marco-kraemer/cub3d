@@ -6,11 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:39:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/04/30 09:55:07 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:41 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../include/cub3d.h"
 
 void	make_background(t_data img)
 {

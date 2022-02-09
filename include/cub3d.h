@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 09:29:55 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/06 10:52:02 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:40:09 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include <stdint.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 # define	PI		3.1415926535
 # define	FOV_ANGLE	1.04719

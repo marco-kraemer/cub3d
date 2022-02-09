@@ -6,11 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 14:28:10 by maraurel          #+#    #+#             */
-/*   Updated: 2021/05/04 22:28:15 by maraurel         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:39:41 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../include/cub3d.h"
 
 int	get_sky_color2(t_aux aux, char *file, char *color[3], int count)
 {

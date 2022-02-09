@@ -6,69 +6,51 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 09:44:11 by maraurel          #+#    #+#              #
-#    Updated: 2021/05/05 22:38:13 by maraurel         ###   ########.fr        #
+#    Updated: 2022/02/09 15:54:41 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3D
+NAME = cub3d
 
-SRC = cub3d.c \
-	background.c \
-	bitmap.c \
-	close.c \
-	get_sky_floor.c \
-	tex.c \
-	get_color.c \
-	get_resolution.c \
-	init.c \
-	keys.c \
-	map.c \
-	map2.c \
-	move.c \
-	my_mlx_pixel_put.c \
-	radius.c \
-	radius2.c \
-	sprites2.c \
-	sprites.c \
-	utils.c \
-	walls.c
+SRC_PATH = ./src
+
+OBJ_PATH = ./obj
+
+SRC = $(notdir $(wildcard ./src/*.c))
+
+OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 
 CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(NAME) $(OBJ)
 
-OBJS = $(SRC:.c=.o)
+$(NAME): $(OBJ)
+	$(MAKE) -C libft
+	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./libft/libft.a -o $(NAME)
 
-$(NAME): lib
-	@$(CC) $(FLAGS) -I/usr/include -Imlx_linux -O3 -c $(SRC)
-	@$(CC) $(FLAGS) $(OBJS) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./libft/libft.a -o $(NAME)
+$(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
+	$(CC) -g $(FLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
-lib:
-	@$(MAKE) -C libft
-	
 fclean: clean
 	@$(RM) $(NAME)
 	@$(MAKE) fclean -C libft
 
-clean: cleanlibft
-	@$(RM) $(OBJS)
-	@$(RM) *.bmp
-
-cleanlibft:
+clean:
 	@$(MAKE) clean -C libft
+	@$(RM) $(OBJ_PATH)/*.o
 
 re: fclean all
 
-run: re
-	@clear
-	@./$(NAME) map.cub
+run: all
+	@./$(NAME)
 
-memory: re
-	@clear
-	@ valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME) map.cub
 git:
 	git add .
 	git commit -m "Update"
 	git push
+
+memory: re
+	@clear
+	@ valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME) map.cub
