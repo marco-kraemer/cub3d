@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/24 09:44:11 by maraurel          #+#    #+#              #
-#    Updated: 2022/02/09 15:54:41 by maraurel         ###   ########.fr        #
+#    Updated: 2022/02/09 16:00:58 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,14 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(MAKE) -C libft
-	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./libft/libft.a -o $(NAME)
+	@$(MAKE) -C libft
+	@$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./libft/libft.a -o $(NAME)
+	@echo "Installation completed"
+	@echo "Run './cub3d <map_path>'"
 
 $(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
-	$(CC) -g $(FLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	@echo "Building cub3d....."
+	@$(CC) -g $(FLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 fclean: clean
 	@$(RM) $(NAME)
